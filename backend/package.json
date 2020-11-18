@@ -1,0 +1,27 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend of this application ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sriramselvakumar/InvestocracyInterviewApp.git"
+  },
+  "author": "Sriram Selvakumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sriramselvakumar/InvestocracyInterviewApp/issues"
+  },
+  "homepage": "https://github.com/sriramselvakumar/InvestocracyInterviewApp#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.15"
+  }
+}
