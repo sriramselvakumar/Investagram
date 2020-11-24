@@ -1,0 +1,10 @@
+{
+  "registerUser": "/api/register/registerInvestor",
+  "loginUser": "/api/login/loginInvestor",
+  "getUser": "/api/user/getUser",
+  "createPost": "/api/post/createPost",
+  "getPosts": "/api/post/getPosts/",
+  "putComment" : "/api/post/putComment",
+  "updateLike" : "/api/post/updateLiked",
+  "deletePost" : "/api/post/deletePost/"
+}
