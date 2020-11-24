@@ -6,7 +6,7 @@ const Registration = require('./Routes/Registration')
 const Login  = require('./Routes/Login')
 const User = require('./Routes/Users')
 const Post = require('./Routes/Posts')
-
+const path = require('path')
 require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 8000;
@@ -20,6 +20,8 @@ mongoose.connect(uri, {
     useNewUrlParser: true,
     useCreateIndex: true,
 });
+
+app.use(express.static(path.join(__dirname, 'frontend', 'build')));
 
 const connection = mongoose.connection;
 connection.once("open", () => {

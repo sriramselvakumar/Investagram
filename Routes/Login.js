@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 
 router.post('/loginInvestor', async(req,res) => {
     const {email,password}  =req.body
-    investor = await Investor.findOne({email})
+    let investor = await Investor.findOne({email})
     if(!investor) return res.send({loggedIn: false, token: 'empty'})
     const isValidUser = await bcrypt.compare(password,investor.password)
     if(!isValidUser) return res.send({loggedIn: false, token: 'empty'})
