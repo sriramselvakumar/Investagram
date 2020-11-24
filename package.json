@@ -4,7 +4,8 @@
   "description": "Backend of this application ",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node server.js"
   },
   "repository": {
     "type": "git",
@@ -17,11 +18,24 @@
   },
   "homepage": "https://github.com/sriramselvakumar/InvestocracyInterviewApp#readme",
   "dependencies": {
+    "@sendgrid/mail": "^7.4.0",
+    "axios": "^0.21.0",
+    "bcrypt": "^5.0.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "is-image-url": "^1.1.8",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.10.15"
+    "mongoose": "^5.10.15",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.8",
+    "@babel/node": "^7.12.6",
+    "@babel/preset-env": "^7.12.7",
+    "nodemon": "^2.0.6"
   }
 }
