@@ -6,6 +6,7 @@ import {Jumbotron,Spinner} from 'react-bootstrap'
 import http from '../AxiosConfig/AxiosSettings'
 import urls from '../urls.json'
 import PostCard from '../Components/PostCard'
+import Alert from '../Components/Alert'
 const Feed = () => {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
@@ -27,6 +28,7 @@ const Feed = () => {
     }
 
     const onSubmit =  async() => {
+        console.log({title,description,imageLink, length: title.length})
         if(title.length < 1) {
             setShowAlert(true)
             setAlertText('You have to enter a title')
@@ -47,6 +49,12 @@ const Feed = () => {
     const displayPosts = () => {
         return (
             <React.Fragment>
+                <Alert 
+                showAlert = {showAlert} 
+                setShowAlert = {setShowAlert} 
+                alertText = {alertText} 
+                style = {{width: '30%'}}
+                />
                  <PostForm 
                 onSubmit = {onSubmit} 
                 setTitle = {setTitle} 

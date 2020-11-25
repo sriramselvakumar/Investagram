@@ -133,7 +133,7 @@ const Register = () => {
                         />
                     </Form.Group>
                     <Form.Group>
-                        <Form.Label>Profile Image Url</Form.Label>
+                        <Form.Label>Profile Image Url(optional)</Form.Label>
                         <Form.Control
                             placeholder = 'Image Url'
                             onChange = {

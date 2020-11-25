@@ -30,7 +30,7 @@ const PostForm = (props) => {
                   </Form.Group>
                   <Form.Group>
                     <Form.Control
-                      placeholder = "Image Link"
+                      placeholder = "Image Link (Optional)"
                       onChange={(event) => setImageLink(event.target.value)}
                     />
                   </Form.Group>

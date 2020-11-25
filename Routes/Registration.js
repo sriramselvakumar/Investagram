@@ -9,9 +9,10 @@ require('dotenv').config()
 
 router.post('/registerInvestor',async(req, res) => {
     const {firstName, lastName,email, password,profileImg} = req.body
-    const validImage = await isImageUrl(profileImg)
+    let validImage = true
+    if(profileImg.length > 0) validImage = await isImageUrl(profileImg)
     let validEmail = true
-    investor = await Investor.findOne({email})
+    let investor = await Investor.findOne({email})
     if(investor) validEmail = false
     if(!validImage || !validEmail){
         return res.status(200).send({

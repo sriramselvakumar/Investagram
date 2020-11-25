@@ -21,11 +21,7 @@ mongoose.connect(uri, {
     useCreateIndex: true,
 });
 
-app.use(express.static(path.join(__dirname, 'frontend', 'build')));
 
-app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
-});
 
 const connection = mongoose.connection;
 connection.once("open", () => {
@@ -36,6 +32,11 @@ app.use('/api/register',Registration)
 app.use('/api/login',Login)
 app.use('/api/user',User)
 app.use('/api/post',Post)
+app.use(express.static(path.join(__dirname, 'frontend', 'build')));
+
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+});
 
 app.listen(port, () => {
     console.log(`Server running on port ${port} `);

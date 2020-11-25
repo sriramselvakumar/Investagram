@@ -20,13 +20,14 @@ router.post('/createPost',AuthInvestor, async (req, res) => {
         authorID: req.user.id,
     })
     post = await post.save()
-    const {comments,likes} = post
+    const {comments,likes,_id} = post
     post = {
         title,
         description,
         imageLink,
         comments,
         likes,
+        postID: _id,
         authorName: 'By You',
     }
     return res.send({valid: true, validImage, post})

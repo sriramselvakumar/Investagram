@@ -27,10 +27,10 @@ const Profile = () => {
     const [loading, setLoading] = useState(true)
     const [posts,setPosts] = useState([])
     const {background} = commonStyles
+
     const loadUserData = async () => {
         const {data} = await http.get(urls.getUser)
-        const {investor} = data
-        const {firstName, lastName, profileImg} = investor
+        const {firstName, lastName, profileImg} = data.investor
         await setUserInfo({firstName, lastName, profileImg})
         const response = await http.get(urls.getPosts + "true")  
         await setPosts([...response.data.posts])
@@ -51,9 +51,14 @@ const Profile = () => {
     const displayProfile = () => {
         return(
             <React.Fragment>
-                <div style = {styles.imageDiv} >
+                {
+                    userInfo.profileImg.length > 0 ? 
+                    <> <div style = {styles.imageDiv} >
                     <Image src= {profileImg} style = {styles.image} roundedCircle width = '40%' height = '40%' />
-                </div>
+                        </div> 
+                        </> 
+                    : null
+                }
                 <h1 style = {{textAlign: 'center'}} >{firstName} {" "} {lastName}</h1>
                 {posts.map((post) => <PostCard info = {post} userAccessed = {true} deletePost = {deletePost} />)}
             </React.Fragment>
