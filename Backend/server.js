@@ -23,6 +23,10 @@ mongoose.connect(uri, {
 
 app.use(express.static(path.join(__dirname, 'frontend', 'build')));
 
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+});
+
 const connection = mongoose.connection;
 connection.once("open", () => {
     console.log("Connected to MongoDB");
