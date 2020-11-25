@@ -1,10 +1,10 @@
 {
-  "registerUser": "http://18.217.169.165:8000/api/register/registerInvestor",
-  "loginUser": "http://18.217.169.165:8000/api/login/loginInvestor",
-  "getUser": "http://18.217.169.165:8000/api/user/getUser",
-  "createPost": "http://18.217.169.165:8000/api/post/createPost",
-  "getPosts": "http://18.217.169.165:8000/api/post/getPosts/",
-  "putComment" : "http://18.217.169.165:8000/api/post/putComment",
-  "updateLike" : "http://18.217.169.165:8000/api/post/updateLiked",
-  "deletePost" : "http://18.217.169.165:8000/api/post/deletePost/"
+  "registerUser": "/api/register/registerInvestor",
+  "loginUser": "/api/login/loginInvestor",
+  "getUser": "/api/user/getUser",
+  "createPost": "/api/post/createPost",
+  "getPosts": "/api/post/getPosts/",
+  "putComment" : "/api/post/putComment",
+  "updateLike" : "/api/post/updateLiked",
+  "deletePost" : "/api/post/deletePost/"
 }
